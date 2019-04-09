@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
     
     var selectedCountry: Country!
     
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var capitolLabel: UILabel!
     @IBOutlet var sizeLabel: UILabel!
@@ -30,6 +31,7 @@ class DetailViewController: UIViewController {
         sizeLabel.text = country.size
         populationLabel.text = String(country.population)
         currencyLabel.text = country.currency
+        imageView.image = UIImage(named: country.name.lowercased())
     }
     
 
