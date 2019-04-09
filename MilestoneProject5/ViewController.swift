@@ -53,12 +53,13 @@ class ViewController: UITableViewController {
     // Tells the delegate that the specified row is now selected.
     // This class is the delegate.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if let detailView = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
-//            detailView.selectedImageName = countries[indexPath.row]
-//            detailView.title = "\(indexPath.row + 1) of \(pictureNames.count)"
-//            // Pushes a view controller onto the receiver’s stack and updates the display. Note it is animated.
-//            navigationController?.pushViewController(detailView, animated: true)
-//        }
+        if let detailView = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
+            
+            detailView.selectedCountry = countries[indexPath.row]
+            
+            // Pushes a view controller onto the receiver’s stack and updates the display. Note it is animated.
+            navigationController?.pushViewController(detailView, animated: true)
+        }
     }
 
 }

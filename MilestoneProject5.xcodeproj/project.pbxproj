@@ -15,6 +15,7 @@
 		8D7307BB225BF39000A39AF2 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7307BA225BF39000A39AF2 /* Country.swift */; };
 		8D7307BF225BF48600A39AF2 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D7307BE225BF48600A39AF2 /* countries.json */; };
 		8D8EFE77225CE441001B7E54 /* CountryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EFE76225CE441001B7E54 /* CountryResponse.swift */; };
+		8D8EFE79225D1DA8001B7E54 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8EFE78225D1DA8001B7E54 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8D7307BA225BF39000A39AF2 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		8D7307BE225BF48600A39AF2 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = countries.json; path = ../../../Downloads/countries.json; sourceTree = "<group>"; };
 		8D8EFE76225CE441001B7E54 /* CountryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryResponse.swift; sourceTree = "<group>"; };
+		8D8EFE78225D1DA8001B7E54 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				8D7307A8225BF36200A39AF2 /* AppDelegate.swift */,
 				8D7307AA225BF36200A39AF2 /* ViewController.swift */,
 				8D7307BA225BF39000A39AF2 /* Country.swift */,
+				8D8EFE78225D1DA8001B7E54 /* DetailViewController.swift */,
 				8D8EFE76225CE441001B7E54 /* CountryResponse.swift */,
 				8D7307AC225BF36200A39AF2 /* Main.storyboard */,
 				8D7307AF225BF36400A39AF2 /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 			files = (
 				8D7307AB225BF36200A39AF2 /* ViewController.swift in Sources */,
 				8D7307A9225BF36200A39AF2 /* AppDelegate.swift in Sources */,
+				8D8EFE79225D1DA8001B7E54 /* DetailViewController.swift in Sources */,
 				8D8EFE77225CE441001B7E54 /* CountryResponse.swift in Sources */,
 				8D7307BB225BF39000A39AF2 /* Country.swift in Sources */,
 			);
