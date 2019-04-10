@@ -14,7 +14,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var capitolLabel: UILabel!
+    @IBOutlet var capitalLabel: UILabel!
     @IBOutlet var sizeLabel: UILabel!
     @IBOutlet var populationLabel: UILabel!
     @IBOutlet var currencyLabel: UILabel!
@@ -27,7 +27,7 @@ class DetailViewController: UIViewController {
         }
         
         nameLabel.text = country.name
-        capitolLabel.text = country.capitol
+        capitalLabel.text = country.capital
         sizeLabel.text = country.size
         populationLabel.text = String(country.population)
         currencyLabel.text = country.currency

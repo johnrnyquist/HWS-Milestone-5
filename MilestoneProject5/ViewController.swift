@@ -42,7 +42,7 @@ class ViewController: UITableViewController {
          to mean “do this only if there is an actual text label there,
          or do nothing otherwise.”   */
         cell.textLabel?.text = countries[indexPath.row].name // indexPath: A list of indexes that together represent the path to a specific location in a tree of nested arrays.
-        cell.detailTextLabel?.text = countries[indexPath.row].capitol
+        cell.detailTextLabel?.text = countries[indexPath.row].capital
         
         return cell
     }
