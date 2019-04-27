@@ -1,15 +1,9 @@
 import UIKit
 
 class ViewController: UITableViewController {
+
+    //MARK:- ViewController class
     var countries = [Country]()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        guard let countries = loadJson(filename: "countries") else { return }
-        print(countries)
-        self.countries = countries
-    }
 
     func loadJson(filename fileName: String) -> [Country]? {
 
@@ -26,6 +20,15 @@ class ViewController: UITableViewController {
             }
         }
         return nil
+    }
+
+    //MARK:- UIViewController class
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        guard let countries = loadJson(filename: "countries") else { return }
+        print(countries)
+        self.countries = countries
     }
 
     //MARK: - UITableViewDataSource protocol
