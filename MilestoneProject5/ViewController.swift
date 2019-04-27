@@ -1,22 +1,25 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    
     var countries = [Country]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let countries = loadJson(filename: "countries") else {return}
+
+        guard let countries = loadJson(filename: "countries") else { return }
         print(countries)
         self.countries = countries
     }
 
     func loadJson(filename fileName: String) -> [Country]? {
-        if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
+
+        if let url = Bundle.main.url(forResource: fileName,
+                                     withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()
-                let jsonData = try decoder.decode(CountryResponse.self, from: data)
+                let jsonData = try decoder.decode(CountryResponse.self,
+                                                  from: data)
                 return jsonData.countries
             } catch {
                 print("error:\(error)")
@@ -26,42 +29,51 @@ class ViewController: UITableViewController {
     }
 
     //MARK: - UITableViewDataSource protocol
-    
     // Tells the data source to return the number of rows in a given section of a table view.
     // This class is the data source.
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView,
+                            numberOfRowsInSection section: Int) -> Int {
         return countries.count
     }
-    
+
     // Asks the data source for a cell to insert in a particular location of the table view.
     // This class is the data source.
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
+                                                 for: indexPath)
+
         /*  Swift lets us use a question mark – textLabel? –
          to mean “do this only if there is an actual text label there,
          or do nothing otherwise.”   */
-        cell.textLabel?.text = countries[indexPath.row].name // indexPath: A list of indexes that together represent the path to a specific location in a tree of nested arrays.
-        cell.detailTextLabel?.text = countries[indexPath.row].capital
-        
+        cell.textLabel?.text = countries[
+            indexPath.row
+            ].name // indexPath: A list of indexes that together represent the path to a specific location in a tree of nested arrays.
+        cell.detailTextLabel?.text = countries[
+            indexPath.row
+            ].capital
+
         return cell
     }
-    
-    
+
     //MARK: - UITableViewDelegate protocol
-    
     // Tells the delegate that the specified row is now selected.
     // This class is the delegate.
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
+
         if let detailView = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
-            
-            detailView.selectedCountry = countries[indexPath.row]
-            
+
+            detailView.selectedCountry = countries[
+                indexPath.row
+                ]
+
             // Pushes a view controller onto the receiver’s stack and updates the display. Note it is animated.
-            navigationController?.pushViewController(detailView, animated: true)
+            navigationController?.pushViewController(detailView,
+                                                     animated: true)
         }
     }
-
 }
 
 /*

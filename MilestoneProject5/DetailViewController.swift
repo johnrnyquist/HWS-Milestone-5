@@ -9,23 +9,21 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    
     var selectedCountry: Country!
-    
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var capitalLabel: UILabel!
     @IBOutlet var sizeLabel: UILabel!
     @IBOutlet var populationLabel: UILabel!
     @IBOutlet var currencyLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         guard let country = selectedCountry else {
             return
         }
-        
+
         nameLabel.text = country.name
         capitalLabel.text = country.capital
         sizeLabel.text = country.size
@@ -33,6 +31,4 @@ class DetailViewController: UIViewController {
         currencyLabel.text = country.currency
         imageView.image = UIImage(named: country.name.lowercased())
     }
-    
-
 }
