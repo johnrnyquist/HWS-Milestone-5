@@ -47,12 +47,8 @@ class ViewController: UITableViewController {
         /*  Swift lets us use a question mark – textLabel? –
          to mean “do this only if there is an actual text label there,
          or do nothing otherwise.”   */
-        cell.textLabel?.text = countries[
-            indexPath.row
-            ].name // indexPath: A list of indexes that together represent the path to a specific location in a tree of nested arrays.
-        cell.detailTextLabel?.text = countries[
-            indexPath.row
-            ].capital
+        cell.textLabel?.text = countries[indexPath.row].name // indexPath: A list of indexes that together represent the path to a specific location in a tree of nested arrays.
+        cell.detailTextLabel?.text = countries[indexPath.row].capital
 
         return cell
     }
@@ -65,9 +61,7 @@ class ViewController: UITableViewController {
 
         if let detailView = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
 
-            detailView.selectedCountry = countries[
-                indexPath.row
-                ]
+            detailView.selectedCountry = countries[indexPath.row]
 
             // Pushes a view controller onto the receiver’s stack and updates the display. Note it is animated.
             navigationController?.pushViewController(detailView,
